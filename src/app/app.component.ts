@@ -11,6 +11,8 @@ import { Observable } from 'rxjs';
 export class AppComponent implements OnInit {
   photos$: Observable<Photo[]>;
 
+  showGrayscale = false;
+
   constructor(private homepageService: HomepageService) {
     this.photos$ = this.homepageService.photos$;
   }
