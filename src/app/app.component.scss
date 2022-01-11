@@ -1,3 +1,12 @@
+.card {
+  height: 320px;
+  background: rgb(218, 218, 218);
+}
+
+.card-title {
+  min-height: 38px;
+}
+
 .card-body {
   position: absolute;
   bottom: 0px;
@@ -15,4 +24,14 @@
   -webkit-filter: grayscale(1); /* Webkit */
   filter: gray; /* IE6-9 */
   filter: grayscale(1); /* W3C */
+}
+
+.truncated {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+img {
+  max-height:100%;
 }
