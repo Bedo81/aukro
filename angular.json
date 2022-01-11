@@ -76,7 +76,8 @@
               "browserTarget": "aukro-app:build:production"
             },
             "development": {
-              "browserTarget": "aukro-app:build:development"
+              "browserTarget": "aukro-app:build:development",
+              "proxyConfig": "src/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

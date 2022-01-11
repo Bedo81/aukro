@@ -1,0 +1,8 @@
+{
+  "/images/*": {
+    "target": "https://cdn.aukro.cz/",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
+    }
+}

@@ -13,7 +13,7 @@
         <label class="form-check-label" for="flexSwitchCheckDefault">Make photo greyscale</label>
       </div>
       <div>
-        <button type="button" class="btn btn-primary">Fetch New Photos</button>
+        <button type="button" class="btn btn-primary" (click)="fetchNewPhotos()">Fetch New Photos</button>
       </div>
     </div>
   </section>
@@ -21,42 +21,12 @@
   <div class="container">
     <div class="row row-cols-1 row-cols-sm-2">
 
-      <div class="col">
+      <div class="col" *ngFor="let photo of photos$ | async">
         <div class="card shadow-sm">
-          <img src="assets\photo-example.PNG" />
+          <img [src]="photo.url" alt="Sign Thumbnail">
           <div class="card-body">
-            <h6>Lucas Budimaier</h6>
-            <a href="#">https://unsplash.com/photos/pwaaqfoMibl</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card shadow-sm">
-          <img src="assets\photo-example.PNG" />
-          <div class="card-body">
-            <h6>Lucas Budimaier</h6>
-            <a href="#">https://unsplash.com/photos/pwaaqfoMibl</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card shadow-sm">
-          <img src="assets\photo-example.PNG" />
-          <div class="card-body">
-            <h6>Lucas Budimaier</h6>
-            <a href="#">https://unsplash.com/photos/pwaaqfoMibl</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col">
-        <div class="card shadow-sm">
-          <img src="assets\photo-example.PNG" />
-          <div class="card-body">
-            <h6>Lucas Budimaier</h6>
-            <a href="#">https://unsplash.com/photos/pwaaqfoMibl</a>
+            <h6>{{photo.name}}</h6>
+            <a [href]="photo.url">{{photo.url}}</a>
           </div>
         </div>
       </div>
