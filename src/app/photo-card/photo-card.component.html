@@ -1,0 +1,11 @@
+<div class="card shadow-sm">
+  <img [src]="photo.url" [class.grayscale]="showGrayscale" alt="Sign Thumbnail">
+  <div class="card-body">
+    <div class="card-title">
+      <h6>{{photo.name}}</h6>
+    </div>
+    <div class="truncated">
+      <a [href]="photo.url">{{photo.url}}</a>
+    </div>
+  </div>
+</div>

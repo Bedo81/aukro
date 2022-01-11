@@ -1,42 +1,15 @@
-<header>
-  <div class="container">
-    <h1>Photo Fetcher</h1>
-  </div>
+<header class="container">
+  <app-header></app-header>
 </header>
 
 <main>
-
   <section class="container">
-    <div class="d-flex flex-row justify-content-between">
-      <div class="form-check form-switch d-flex align-items-center">
-        <input class="form-check-input" type="checkbox" [(ngModel)]="showGrayscale"> &nbsp;
-        <label class="form-check-label" for="flexSwitchCheckDefault">Make photo greyscale</label>
-      </div>
-      <div>
-        <button type="button" class="btn btn-primary" (click)="fetchNewPhotos()">Fetch New Photos</button>
-      </div>
-    </div>
+    <app-actions [(showGrayscale)]="showGrayscale" (fetchNewPhotos)="fetchNewPhotos()">
+    </app-actions>
   </section>
 
-  <div class="container">
-    <div class="row row-cols-1 row-cols-sm-2">
-
-      <div class="col" *ngFor="let photo of photos$ | async">
-        <div class="card shadow-sm">
-          <img [src]="photo.url" [class.grayscale]="showGrayscale" alt="Sign Thumbnail">
-          <div class="card-body">
-            <div class="card-title">
-              <h6>{{photo.name}}</h6>
-            </div>
-            <div class="truncated">
-              <a [href]="photo.url">{{photo.url}}</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
+  <section class="container">
+    <app-photo-cards [photos]="photos$ | async" [showGrayscale]="showGrayscale">
+    </app-photo-cards>
+  </section>
 </main>
-
-<router-outlet></router-outlet>
